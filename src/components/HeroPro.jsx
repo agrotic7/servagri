@@ -14,10 +14,14 @@ function HeroPro() {
 
   return (
     <section className="hero-pro-section">
-      <video autoPlay loop muted id="hero-video">
-        <source src="/Vidéo_Irrigation_Automatique_Prête.mp4" type="video/mp4" />
-        Votre navigateur ne supporte pas la vidéo.
-      </video>
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        src="/Vidéo_Irrigation_Automatique_Prête.mp4"
+        id="hero-video"
+      />
 
       <motion.div
         className="hero-pro-content"

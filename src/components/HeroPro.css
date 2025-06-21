@@ -222,6 +222,15 @@
 }
 
 @media screen and (max-width: 768px) {
+  .hero-video-bg {
+    display: none; /* Hide video on mobile */
+  }
+  .hero-pro-section {
+    background-image: url('/servagri_irrigation.png');
+    background-size: cover;
+    background-position: center;
+  }
+
   .hero-pro-content h1 {
     font-size: 2.2rem;
   }

@@ -43,6 +43,28 @@ const servicesData = [
 ];
 
 export default function Services() {
+
+  const heroVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -53,16 +75,33 @@ export default function Services() {
     >
       {/* Hero Section */}
       <section className="services-hero">
-        <div className="services-hero-content">
-          <h1>Solutions d'Irrigation Intelligente</h1>
-          <p>
+        <motion.div 
+          className="services-hero-content"
+          variants={heroVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.span variants={itemVariants} className="services-hero-badge">Notre Expertise</motion.span>
+          <motion.h1 variants={itemVariants}>Solutions d'Irrigation Intelligente</motion.h1>
+          <motion.p variants={itemVariants}>
             Découvrez notre gamme complète de services, conçue pour optimiser votre consommation d'eau et maximiser vos rendements.
-          </p>
-        </div>
+          </motion.p>
+          <motion.div variants={itemVariants}>
+            <a href="#services-grid" className="services-hero-btn">Explorer nos services</a>
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          className="services-hero-image"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <img src="/servagri_irrigation.png" alt="Personne utilisant un téléphone dans un champ irrigué" />
+        </motion.div>
       </section>
 
       {/* Services Grid Section */}
-      <section className="services-grid-section">
+      <section id="services-grid" className="services-grid-section">
         <div className="text-center mb-5">
           <h2 className="display-5 fw-bold text-dark mb-3">
             Nos Solutions Complètes pour une Agriculture d'Avenir

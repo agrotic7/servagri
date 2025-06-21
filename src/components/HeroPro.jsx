@@ -31,6 +31,7 @@ function HeroPro() {
         playsInline
         src="/Vidéo_Irrigation_Automatique_Prête.mp4"
         id="hero-video"
+        poster="/servagri_irrigation.png"
       />
 
       <motion.div

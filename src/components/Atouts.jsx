@@ -28,7 +28,7 @@ const atouts = [
       <svg width="38" height="38" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2563eb"/><path d="M12 8v4l3 3" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
     ),
     title: "Accompagnement sur-mesure",
-    desc: "Un expert vous suit de l'étude à la maintenance, partout en France."
+    desc: "Un expert vous suit de l'étude à la maintenance, partout au Sénégal."
   },
 ];
 

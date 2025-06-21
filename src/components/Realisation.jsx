@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import './Realisation.css';
@@ -7,6 +7,15 @@ import { motion } from 'framer-motion';
 function Realisation() {
   const [realisations, setRealisations] = useState([]);
   const navigate = useNavigate();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Erreur de lecture automatique de la vidéo:", error);
+      });
+    }
+  }, []);
 
   useEffect(() => {
     // Charger les réalisations depuis Supabase
@@ -34,6 +43,7 @@ function Realisation() {
     >
       <section className="realisation-hero">
         <video 
+            ref={videoRef}
             className="realisation-hero-video" 
             autoPlay 
             loop 

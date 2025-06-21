@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './HeroPro.css'; // Importation du fichier CSS
 
 function HeroPro() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Erreur de lecture automatique de la vidéo:", error);
+      });
+    }
+  }, []);
   
   const scrollToContent = () => {
     // Fait défiler jusqu'à la section suivante (par exemple, les atouts)
@@ -14,7 +23,8 @@ function HeroPro() {
 
   return (
     <section className="hero-pro-section">
-      <video 
+      <video
+        ref={videoRef}
         autoPlay 
         loop 
         muted 

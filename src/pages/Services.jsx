@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 // Remove import of './Services.css' as we'll be using Tailwind CSS
 // import './Services.css'; 
 import { motion } from 'framer-motion'; // Importation de motion
@@ -44,6 +44,15 @@ const servicesData = [
 ];
 
 export default function Services() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Erreur de lecture automatique de la vidéo:", error);
+      });
+    }
+  }, []);
 
   return (
     <motion.div
@@ -51,46 +60,43 @@ export default function Services() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="bg-light"
+      className="services-page"
     >
       {/* Hero Section */}
-      <section className="container-fluid bg-white py-5">
-        <div className="container">
-          <div className="row align-items-center justify-content-center py-5">
-            <div className="col-md-6 text-center mb-4 mb-md-0">
-              <span className="badge bg-success-subtle text-success rounded-pill px-3 py-1 mb-4 shadow-sm">
-                Expert en Irrigation Connectée
-              </span>
-              <h1 className="display-4 fw-bold text-dark mb-4">
-                Solutions d'Irrigation Intelligente
-              </h1>
-              <p className="lead text-muted mb-5">
-                Découvrez notre gamme complète de services d'irrigation connectée, 
-                conçue pour optimiser votre consommation d'eau et maximiser vos rendements.
-              </p>
-              <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-                <div className="col">
-                  <div className="p-4 bg-white rounded-3 shadow-sm text-center">
-                    <span className="d-block fs-2 fw-bold text-success mb-2">40%</span>
-                    <span className="d-block text-muted">d'économie d'eau</span>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="p-4 bg-white rounded-3 shadow-sm text-center">
-                    <span className="d-block fs-2 fw-bold text-success mb-2">500+</span>
-                    <span className="d-block text-muted">installations</span>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="p-4 bg-white rounded-3 shadow-sm text-center">
-                    <span className="d-block fs-2 fw-bold text-success mb-2">24/7</span>
-                    <span className="d-block text-muted">support</span>
-                  </div>
-                </div>
+      <section className="services-hero">
+        <video 
+            ref={videoRef}
+            className="services-hero-video" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            src="/Vidéo_Irrigation_Automatique_Prête.mp4"
+        />
+        <div className="services-hero-content">
+          <h1>Solutions d'Irrigation Intelligente</h1>
+          <p className="lead text-muted mb-5">
+            Découvrez notre gamme complète de services d'irrigation connectée, 
+            conçue pour optimiser votre consommation d'eau et maximiser vos rendements.
+          </p>
+          <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+            <div className="col">
+              <div className="p-4 bg-white rounded-3 shadow-sm text-center">
+                <span className="d-block fs-2 fw-bold text-success mb-2">40%</span>
+                <span className="d-block text-muted">d'économie d'eau</span>
               </div>
             </div>
-            <div className="col-md-6 d-none d-md-flex justify-content-center">
-              <img src="servagri_irrigation.png" alt="Irrigation Solutions" className="img-fluid rounded-3 shadow-lg" />
+            <div className="col">
+              <div className="p-4 bg-white rounded-3 shadow-sm text-center">
+                <span className="d-block fs-2 fw-bold text-success mb-2">500+</span>
+                <span className="d-block text-muted">installations</span>
+              </div>
+            </div>
+            <div className="col">
+              <div className="p-4 bg-white rounded-3 shadow-sm text-center">
+                <span className="d-block fs-2 fw-bold text-success mb-2">24/7</span>
+                <span className="d-block text-muted">support</span>
+              </div>
             </div>
           </div>
         </div>

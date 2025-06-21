@@ -1,24 +1,20 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaCloud } from 'react-icons/fa';
-import { FiDroplet } from 'react-icons/fi';
 import './HeroPro.css'; // Importation du fichier CSS
 
 function HeroPro() {
   const videoRef = useRef(null);
-  // Force re-render to bypass cache issues
+
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
-        // Gérer les erreurs de lecture auto, par ex. sur certains mobiles
         console.error("Erreur de lecture automatique de la vidéo:", error);
       });
     }
   }, []);
   
   const scrollToContent = () => {
-    // Fait défiler jusqu'à la section suivante (par exemple, les atouts)
-    const nextSection = document.querySelector('.atouts-section'); // Assurez-vous que votre section Atouts a cette classe
+    const nextSection = document.querySelector('.atouts-section');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -35,12 +31,7 @@ function HeroPro() {
         src="/Vidéo_Irrigation_Automatique_Prête.mp4"
         className="hero-video-bg"
       />
-      <div className="hero-deco-shapes">
-        <div className="deco-circle-large"><FaCloud /></div>
-        <div className="deco-circle-small"><FiDroplet /></div>
-        <div className="deco-line"></div>
-      </div>
-
+      
       <motion.div
         className="hero-pro-content"
         initial={{ opacity: 0, y: 20 }}

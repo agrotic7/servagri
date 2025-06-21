@@ -14,6 +14,9 @@
   background: url('/public/servagri_irrigation.png') no-repeat center center/cover;
   color: white;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .services-hero-video {

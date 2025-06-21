@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import './Realisation.css';
-import { motion } from 'framer-motion';
 
 function Realisation() {
   const [realisations, setRealisations] = useState([]);
@@ -34,13 +33,7 @@ function Realisation() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
-      className="realisation-section-container"
-    >
+    <div className="realisation-section-container">
       <section className="realisation-hero">
         <video 
             ref={videoRef}
@@ -59,12 +52,9 @@ function Realisation() {
       <section className="realisation-section">
         <div className="realisation-grid">
           {realisations.map((item, idx) => (
-            <motion.article
+            <article
               className="realisation-card"
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
             >
               <div className="realisation-image-container">
                 <img 
@@ -84,11 +74,11 @@ function Realisation() {
                   Voir le projet
                 </button>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </section>
-    </motion.div>
+    </div>
   );
 }
 

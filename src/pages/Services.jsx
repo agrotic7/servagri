@@ -1,7 +1,5 @@
 import React from 'react';
 import './Services.css'; 
-import { motion } from 'framer-motion';
-import { FiDroplet, FiBarChart2, FiCpu, FiUsers, FiGitMerge, FiBookOpen } from 'react-icons/fi';
 
 const servicesData = [
   {
@@ -43,61 +41,27 @@ const servicesData = [
 ];
 
 export default function Services() {
-
-  const heroVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="services-page"
-    >
+    <div className="services-page">
       {/* Hero Section */}
       <section className="services-hero">
-        <motion.div 
+        <div 
           className="services-hero-content"
-          variants={heroVariants}
-          initial="hidden"
-          animate="visible"
         >
-          <motion.span variants={itemVariants} className="services-hero-badge">Notre Expertise</motion.span>
-          <motion.h1 variants={itemVariants}>Solutions d'Irrigation Intelligente</motion.h1>
-          <motion.p variants={itemVariants}>
+          <span className="services-hero-badge">Notre Expertise</span>
+          <h1>Solutions d'Irrigation Intelligente</h1>
+          <p>
             Découvrez notre gamme complète de services, conçue pour optimiser votre consommation d'eau et maximiser vos rendements.
-          </motion.p>
-          <motion.div variants={itemVariants}>
+          </p>
+          <div>
             <a href="#services-grid" className="services-hero-btn">Explorer nos services</a>
-          </motion.div>
-        </motion.div>
-        <motion.div 
+          </div>
+        </div>
+        <div 
           className="services-hero-image"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
         >
           <img src="/servagri_irrigation.png" alt="Personne utilisant un téléphone dans un champ irrigué" />
-        </motion.div>
+        </div>
       </section>
 
       {/* Services Grid Section */}
@@ -135,6 +99,6 @@ export default function Services() {
           ))}
         </div>
       </section>
-    </motion.div>
+    </div>
   );
 } 

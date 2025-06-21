@@ -226,9 +226,7 @@
     display: none; /* Hide video on mobile */
   }
   .hero-pro-section {
-    background-image: url('/servagri_irrigation.png');
-    background-size: cover;
-    background-position: center;
+    /* The background image is now handled by the video poster or overlay */
   }
 
   .hero-pro-content h1 {

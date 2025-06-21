@@ -10,26 +10,14 @@
 /* Hero Section */
 .services-hero {
   position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 8rem 2rem;
+  background: url('/public/servagri_irrigation.png') no-repeat center center/cover;
   color: white;
   text-align: center;
-  overflow: hidden; /* Ensure video does not overflow */
-  margin-top: -80px;
 }
 
 .services-hero-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  display: none; /* Hide video element */
 }
 
 .services-hero::before {

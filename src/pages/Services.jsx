@@ -1,7 +1,6 @@
-import React, { useRef, useEffect } from 'react';
-// Remove import of './Services.css' as we'll be using Tailwind CSS
-// import './Services.css'; 
-import { motion } from 'framer-motion'; // Importation de motion
+import React from 'react';
+import './Services.css'; 
+import { motion } from 'framer-motion';
 import { FiDroplet, FiBarChart2, FiCpu, FiUsers, FiGitMerge, FiBookOpen } from 'react-icons/fi';
 
 const servicesData = [
@@ -44,66 +43,26 @@ const servicesData = [
 ];
 
 export default function Services() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Erreur de lecture automatique de la vidéo:", error);
-      });
-    }
-  }, []);
-
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
       className="services-page"
     >
       {/* Hero Section */}
       <section className="services-hero">
-        <video 
-            ref={videoRef}
-            className="services-hero-video" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            src="/Vidéo_Irrigation_Automatique_Prête.mp4"
-        />
         <div className="services-hero-content">
           <h1>Solutions d'Irrigation Intelligente</h1>
-          <p className="lead text-muted mb-5">
-            Découvrez notre gamme complète de services d'irrigation connectée, 
-            conçue pour optimiser votre consommation d'eau et maximiser vos rendements.
+          <p>
+            Découvrez notre gamme complète de services, conçue pour optimiser votre consommation d'eau et maximiser vos rendements.
           </p>
-          <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-            <div className="col">
-              <div className="p-4 bg-white rounded-3 shadow-sm text-center">
-                <span className="d-block fs-2 fw-bold text-success mb-2">40%</span>
-                <span className="d-block text-muted">d'économie d'eau</span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="p-4 bg-white rounded-3 shadow-sm text-center">
-                <span className="d-block fs-2 fw-bold text-success mb-2">500+</span>
-                <span className="d-block text-muted">installations</span>
-              </div>
-            </div>
-            <div className="col">
-              <div className="p-4 bg-white rounded-3 shadow-sm text-center">
-                <span className="d-block fs-2 fw-bold text-success mb-2">24/7</span>
-                <span className="d-block text-muted">support</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Services Grid Section */}
-      <section className="container py-5">
+      <section className="services-grid-section">
         <div className="text-center mb-5">
           <h2 className="display-5 fw-bold text-dark mb-3">
             Nos Solutions Complètes pour une Agriculture d'Avenir

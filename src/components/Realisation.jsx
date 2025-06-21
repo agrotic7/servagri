@@ -30,12 +30,23 @@ function Realisation() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
+      className="realisation-section-container"
     >
-      <section className="realisation-section">
-        <div className="realisation-header">
-          <h2 className="realisation-title">Nos Réalisations</h2>
-          <p className="realisation-subtitle">Découvrez nos projets réussis et l'impact de nos solutions.</p>
+      <section className="realisation-hero">
+        <video 
+            className="realisation-hero-video" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            src="/Vidéo_Irrigation_Automatique_Prête.mp4"
+        />
+        <div className="realisation-hero-content">
+          <h1>Nos Réalisations</h1>
+          <p>Découvrez nos projets réussis et l'impact de nos solutions.</p>
         </div>
+      </section>
+      <section className="realisation-section">
         <div className="realisation-grid">
           {realisations.map((item, idx) => (
             <motion.article

@@ -2,40 +2,41 @@ import React from 'react';
 // Remove import of './Services.css' as we'll be using Tailwind CSS
 // import './Services.css'; 
 import { motion } from 'framer-motion'; // Importation de motion
+import { FiDroplet, FiBarChart2, FiCpu, FiUsers, FiGitMerge, FiBookOpen } from 'react-icons/fi';
 
 const servicesData = [
   {
-    icon: <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17.2 14L12 17.2L6.8 14L12 6.8L17.2 14Z" /></svg>,
+    icon: <FiDroplet />,
     title: "Systèmes d'Irrigation Intelligente",
     description: "Conception et installation de solutions d'irrigation automatisées et connectées, adaptées aux besoins spécifiques de vos cultures pour une utilisation optimale de l'eau.",
     badge: "Certifié ISO 9001"
   },
   {
-    icon: <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 18L7 13L12 8L17 13L12 18Z" /></svg>,
+    icon: <FiBarChart2 />,
     title: "Analyse et Big Data Agronomique",
     description: "Collecte de données via capteurs et drones, analyse avancée et création de tableaux de bord intuitifs pour une prise de décision éclairée.",
     badge: "IA & Machine Learning"
   },
   {
-    icon: <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 14C10.34 14 9 12.66 9 11C9 9.34 10.34 8 12 8C13.66 8 15 9.34 15 11C15 12.66 13.66 14 12 14Z" /></svg>,
+    icon: <FiCpu />,
     title: "Optimisation de la Consommation d'Eau",
     description: "Solutions de précision pour réduire jusqu'à 40% votre consommation d'eau, en tenant compte des prévisions météo et des besoins réels de vos sols.",
     badge: "Économies Garanties"
   },
   {
-    icon: <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" /></svg>,
+    icon: <FiUsers />,
     title: "Support et Accompagnement Personnalisé",
     description: "Une équipe d'experts dédiée à votre succès, offrant un support technique réactif et des conseils agronomiques sur mesure, du diagnostic à la maintenance.",
     badge: "24/7 Support"
   },
   {
-    icon: <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" /></svg>,
+    icon: <FiGitMerge />,
     title: "Mise en place de l'Agriculture de Précision",
     description: "Intégration de technologies avancées (drones, capteurs, logiciels) pour une gestion optimisée des parcelles et une productivité accrue.",
     badge: "Innovation"
   },
   {
-    icon: <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 19.5C9.79 19.5 8 17.71 8 15.5C8 13.29 9.79 11.5 12 11.5C14.21 11.5 16 13.29 16 15.5C16 17.71 14.21 19.5 12 19.5Z" /></svg>,
+    icon: <FiBookOpen />,
     title: "Formations et Ateliers Pratiques",
     description: "Formations sur l'utilisation de nos systèmes et les meilleures pratiques agronomiques, pour une autonomie complète de vos équipes.",
     badge: "Expertise"

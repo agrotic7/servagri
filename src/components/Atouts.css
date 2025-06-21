@@ -20,53 +20,41 @@
   border-radius: 20px;
   padding: 2.5rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(46, 125, 50, 0.08);
-  transition: all 0.5s cubic-bezier(.23,1.01,.32,1);
-  border: 1px solid rgba(46, 125, 50, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
   position: relative;
   overflow: hidden;
 }
 
 .atout-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: linear-gradient(90deg, var(--primary-green) 0%, var(--dark-green) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  display: none;
 }
 
 .atout-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
   border-color: var(--primary-green);
-}
-
-.atout-card:hover::before {
-  opacity: 1;
 }
 
 .atout-icon {
   background: linear-gradient(135deg, var(--light-green) 0%, white 100%);
   border-radius: 50%;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   box-shadow: 0 10px 30px rgba(46, 125, 50, 0.15);
-  transition: all 0.4s cubic-bezier(.23,1.01,.32,1);
+  transition: all 0.3s ease-in-out;
   margin: 0 auto 2rem;
 }
 
 .atout-card:hover .atout-icon {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 15px 40px rgba(46, 125, 50, 0.2);
+  box-shadow: 0 15px 35px rgba(var(--primary-green-rgb), 0.2);
 }
 
 .atout-card h3 {

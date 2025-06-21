@@ -1,5 +1,6 @@
 import React from 'react';
 import './Services.css'; 
+import { FiDroplet, FiBarChart2, FiCpu, FiUsers, FiGitMerge, FiBookOpen } from 'react-icons/fi';
 
 const servicesData = [
   {
